@@ -1,0 +1,50 @@
+{
+ filter: {
+  name: 'Greg Powell'
+ },
+ project: {
+  text: 1,
+  _id: 0
+ }
+}
+
+
+{
+ filter: {
+  name: {
+   $in: [
+    'Greg Powell',
+    'Mercedes Tyler'
+   ]
+  }
+ },
+ project: {
+  text: 1,
+  name: 1,
+  _id: 0
+ }
+}
+
+
+{
+ project: {
+  num_mflix_comments: 1
+ },
+ sort: {
+  num_mflix_comments: -1
+ },
+ limit: 1
+}
+
+
+{
+ project: {
+  num_mflix_comments: 1,
+  title: 1,
+  _id: 0
+ },
+ sort: {
+  num_mflix_comments: -1
+ },
+ limit: 5
+}
