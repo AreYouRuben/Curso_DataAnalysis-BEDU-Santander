@@ -12,7 +12,7 @@ el desarrollo del primer reto se hace escribiendo directamente en SQL. Ver Ejemp
 
 En este reto, se usan archivos .dat con datos separados por "::". Para poder importarlos dentro de las tablas creadas anteriormente, hay que limpiar esos archivos y cambiarlos a .csv como se muestra en las imágenes.
 
-<img src="imagenes/Reto2MoviesClean.png" width="500">
+<img src="imagenes/Reto2MoviesClean.PNG" width="500">
 <img src="imagenes/Reto2RatingsClean.png" width="500">
 
 La importación de los datos se hace desde el wizard de importación de datos en MySQL Workbench.
