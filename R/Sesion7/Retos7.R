@@ -1,3 +1,5 @@
+#########################################   Reto 1
+
 #install.packages("DBI")
 #install.packages("RMySQL")
 #install.packages("dplyr")
@@ -31,3 +33,6 @@ head(per.spanish)
 per.spanish %>% ggplot(aes( x = CountryCode, y=Percentage, fill = IsOfficial )) + 
   geom_bin2d() +
   coord_flip()
+
+
+
