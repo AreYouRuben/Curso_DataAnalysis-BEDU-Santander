@@ -36,3 +36,35 @@ per.spanish %>% ggplot(aes( x = CountryCode, y=Percentage, fill = IsOfficial )) 
 
 
 
+#########################################   Reto 2
+
+install.packages("rvest")
+library(rvest)
+
+link1 <- "https://www.glassdoor.com.mx/Sueldos/data-scientist-sueldo-SRCH_KO0,14.htm"
+fileHTML <- read_html(link1)
+
+tables <- html_nodes(fileHTML, "table")
+table1 <- html_table(tables[1], fill = TRUE)
+
+table <- na.omit(as.data.frame(table1))
+
+str(table)
+
+sueldo <- gsub("MXN","",table$Sueldo)
+sueldo <- gsub("[^[:alnum:][:blank:]?]", "", sueldo)
+sueldo <- gsub("mes", "", sueldo)
+
+sueldo <- as.numeric(sueldo)
+table$Sueldo <- sueldo
+
+empresa <- gsub("Sueldos para Data Scientist en ", "", table$Cargo)
+empresa <- gsub("-.*", "", empresa)
+table$Cargo <- empresa
+
+max.sueldo <- which.max(table$Sueldo)
+table[max.sueldo,]
+
+min.sueldo <- which.min(table$Sueldo)
+table[min.sueldo,]
+
